@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    <title>home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- fonts links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .dark-blue {
+            position: relative;
+        }
+
+        .dark-blue .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dark-blue::after {
+            content: "";
+            top: 0;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            background: #1670c5a3;
+            position: absolute;
+        }
+
+        .dark-primary {
+            position: relative;
+        }
+
+        .dark-primary .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dark-primary::after {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(51, 74, 95);
+            background: linear-gradient(0deg, rgba(51, 74, 95, 0.930453431372549) 0%, rgba(255, 255, 255, 0.42345063025210083) 100%);
+            position: absolute;
+        }
+
+        :root {
+            --primary: #334A5F;
+            --secondary: #2E3B41;
+            --light-bg: #ebebeb87;
+            --white-text: #ffffff;
+            --danger: #B63827;
+            --dark: #000000;
+            --muna: "Roboto", serif;
+            --acumin-pro: "Montserrat", serif;
+        }
+
+        footer {
+            display: flex;
+            align-items: end;
+            overflow: hidden;
+            height: 767px;
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+            gap: 38px;
+            margin-bottom: 30px;
+        }
+
+        footer ul li a:hover {
+            background-color: var(--danger);
+        }
+
+        footer ul li a {
+            color: var(--white-text);
+            transition: .2s linear;
+            border-radius: 10px;
+            padding: 2px 18px 8px;
+            font-size: 26px;
+        }
+
+        footer ul li a::after {
+            content: "";
+            display: block;
+            margin-inline: auto;
+            width: 75%;
+            height: 2px;
+            background-color: var(--white-text);
+            margin-top: -4px;
+        }
+
+        footer ul li a.active {
+            background-color: var(--danger);
+        }
+
+        footer p {
+            color: var(--white-text);
+            font-size: 15px;
+        }
+
+        footer .copy-right {
+            position: relative;
+            border-top: 2px solid var(--white-text);
+            padding: 20px 0;
+            text-align: center;
+            z-index: 3;
+        }
+
+        footer .btn-danger {
+            padding: 10px 30px;
+            border-radius: 14px;
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        footer .logo-sec {
+            border-radius: 15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        footer .address {
+            text-align: end;
+            max-width: 300px;
+        }
+
+        footer .logo-sec p {
+            padding-top: 20px;
+            font-size: 25px;
+        }
+
+        footer .phone {
+            text-align: end;
+            padding-top: 20px;
+            font-size: 25px;
+            max-width: 300px;
+        }
+
+        footer .logo img {
+            max-width: 315px;
+        }
+
+        footer .icon {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            max-width: 300px;
+        }
+
+        footer .icon img {
+            max-width: 45px;
+        }
+
+        footer .icon .btn-danger {
+            line-height: 19px;
+        }
+
+        footer .logo-sec {
+            position: relative;
+        }
+
+        footer .logo-sec .content {
+            position: absolute;
+            bottom: -132px;
+            padding: 25px 65px 180px;
+            background-color: #334a5fc0;
+            border-radius: 15px;
+        }
+
+        .btn-danger {
+            padding: 10px 30px;
+            border-radius: 14px;
+            background: var(--danger);
+            border-color: var(--danger);
+            font-weight: 700;
+            width: 200px;
+            text-transform: uppercase;
+        }
+
+        @media(max-width:1299px) {
+
+            footer ul {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+                margin-bottom: 30px;
+            }
+
+            footer .logo-sec .content {
+                position: absolute;
+                margin-left: -58px;
+                bottom: -132px;
+                padding: 24px 57px 166px;
+                background-color: #334a5fc0;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            footer .logo-sec .content {
+                padding: 25px 45px 160px;
+                margin-left: -24px;
+            }
+
+            footer .logo img {
+                max-width: 300px;
+            }
+
+            footer ul li a {
+                color: var(--white-text);
+                transition: .2s linear;
+                border-radius: 10px;
+                padding: 2px 18px 8px;
+                font-size: 23px;
+            }
+
+            footer .logo-sec p {
+                padding-top: 20px;
+                font-size: 23px;
+                max-width: 282px;
+            }
+
+            footer .phone {
+                text-align: end;
+                padding-top: 20px;
+                font-size: 23px;
+                max-width: 282px;
+            }
+
+            footer .icon {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px;
+                max-width: 282px;
+            }
+
+            footer .logo-sec .content {
+                padding: 25px 45px 160px;
+                margin-left: -52px;
+            }
+
+            footer ul {
+                gap: 10px;
+            }
+
+            footer .btn-danger {
+                width: 193px;
+            }
+        }
+
+        @media (max-width:1099px) {
+            footer .logo-sec .content {
+                padding: 25px 45px 160px;
+                margin-left: -74px;
+            }
+
+            footer ul li a {
+                color: var(--white-text);
+                transition: .2s linear;
+                border-radius: 10px;
+                padding: 1px 17px 7px;
+                font-size: 21px;
+            }
+
+            footer .logo img {
+                max-width: 280px;
+            }
+
+            footer .logo-sec p {
+                padding-top: 17px;
+                font-size: 21px;
+                max-width: 263px;
+            }
+
+            footer .phone {
+                text-align: end;
+                padding-top: 15px;
+                font-size: 21px;
+                max-width: 260px;
+            }
+
+            footer .icon {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 15px;
+                max-width: 263px;
+            }
+
+            footer .btn-danger {
+                width: 160px;
+                font-size: 12px;
+                margin-left: 21px;
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            footer .logo-sec .content {
+                padding: 25px 45px 160px;
+                margin-left: 357px;
+            }
+
+            footer ul li a {
+                color: var(--white-text);
+                transition: .2s linear;
+                border-radius: 10px;
+                padding: 1px 21px 8px;
+                font-size: 20px;
+            }
+
+            footer ul {
+                flex-direction: column;
+                align-items: start;
+                font-size: 40px;
+                text-align: left;
+                margin-left: 83px;
+            }
+
+            footer p {
+                color: var(--white-text);
+                font-size: 13px;
+            }
+        }
+
+        @media(max-width: 800) {
+            footer .logo-sec .content {
+                padding: 25px 45px 160px;
+                margin-left: 320px;
+            }
+
+            footer ul {
+                flex-direction: column;
+                align-items: start;
+                font-size: 43px;
+                text-align: left;
+                margin-left: 106px;
+            }
+
+            footer ul li a {
+                color: var(--white-text);
+                transition: .2s linear;
+                border-radius: 10px;
+                padding: 1px 21px 8px;
+                font-size: 19px;
+            }
+
+            footer p {
+                color: var(--white-text);
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            footer ul {
+        flex-direction: row;
+        align-items: start;
+        font-size: 40px;
+        text-align: left;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+            footer .logo-sec .content {
+        display: flex;
+        position: relative;
+        padding: 27px 13px 22px;
+        margin-left: 0;
+        bottom: 0;
+        border: unset;
+        justify-content: space-between;
+        }
+        footer .logo-sec p {
+        padding-top: 0px;
+        font-size: 14px;
+        max-width: 244px;
+        margin-bottom: 5px;
+        }
+        footer .phone {
+        text-align: end;
+        padding-top: 0;
+        font-size: 14px;
+        max-width: 243px;
+        }
+        footer .icon {
+        display: flex;
+        justify-content: end;
+        padding-top: 15px;
+        max-width: 254px;
+        gap: 17px;
+        }
+        footer .icon .btn-danger {
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        }
+        footer .icon img {
+        max-width: 36px;
+        }
+        footer .logo img {
+        max-width: 215px;
+        }
+        footer p {
+        color: var(--white-text);
+        font-size: 11px;
+        }            
+        }
+
+        @media (max-width: 576px) {
+
+            footer .logo-sec .content {
+        display: flex;
+        position: relative;
+        padding: 25px 31px 22px;
+        margin-left: 0;
+        bottom: 0;
+        border: unset;
+        justify-content: space-between;
+            }
+            footer .btn-danger {
+                width: 150px;
+                font-size: 11px;
+            }
+            footer ul {
+        flex-direction: row;
+        align-items: start;
+        margin-left: 0;
+        justify-content: center;
+            }
+            footer ul li a {
+        color: var(--white-text);
+        transition: .2s linear;
+        border-radius: 10px;
+        padding: 1px 23px 10px;
+        font-size: 19px;
+    }
+    footer .btn-danger {
+        width: 130px;
+        font-size: 10px;
+    }
+    footer ul {
+        gap: 5px;
+    }
+    footer ul li a {
+        color: var(--white-text);
+        transition: .2s linear;
+        border-radius: 10px;
+        padding: 1px 22px 9px;
+        font-size: 18px;
+    }
+            
+        }
+
+        @media (max-width: 500px) {
+           
+        }
+        @media (max-width: 450px){
+            footer .logo-sec .content {
+        display: flex;
+        position: relative;
+        padding: 25px 31px 22px;
+        margin-left: 0;
+        bottom: 0;
+        border: unset;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .address {
+    text-align: center;
+    max-width: 268px;
+    margin: auto;
+}
+footer .phone {
+    text-align: center;
+    max-width: 268px;
+    margin: auto;
+}
+footer .icon {
+    text-align: center;
+    max-width: 268px;
+    margin: auto;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="dark-primary"
+        style="background-image: url(images/banner/rental-banner.png);background-size:cover;background-position: center; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 align-self-end">
+                    <ul>
+                        <li><a href="#" class=" active">Home</a></li>
+                        <li><a href="#">Rental</a></li>
+                        <li><a href="#">Sales</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 align-self-end">
+                    <div class="logo-sec ">
+                        <div class="content">
+                            <div class="logo">
+                                <img src="images/logos/LTC_White_Logo.svg" alt="">
+                            </div>
+                         <div class="footer-content">
+                            <div class="address">
+                                <p>3132 Highway 31 North (Exit #589 off of I-20) Longview, Texas 75603</p>
+                            </div>
+                            <div class="phone ">
+                                <span><a href="#">Phone: (903) 753-1933</a></span>
+                                <span><a href="#">Fax: (903) 753-6266</a></span>
+                            </div>
+
+                            <div class="icon">
+                                <a href="#" class="btn btn-danger">Request a Rental quote</a>
+                                <span><img src="images/icons/footer-logo.svg" alt=""></span>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copy-right">
+                        <p>© Copyright by Sandhills Global, Inc. 2024. All rights reserved. Reproduction of material
+                            appearing on this Web site is strictly prohibited without written permission. North Central
+                            Truck Paper, Great Lakes Truck Paper, South Central Truck Paper, Western Truck Paper, North
+                            Eastern Truck Paper, South Eastern Truck Paper, Mid Atlantic Truck Paper, Mountain West
+                            Truck Paper, and Central Truck Paper are registered trademarks of Sandhills Global, Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
